@@ -1,16 +1,60 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
+<Layout>
+	<section>
+		<h1>Scroll driven animation</h1>
+		<div class="content">
+			<h2>Gir overhode ikke noen fasit</h2>
+			<p>Professor emeritus ved Universitetet i Oslo, Stig S. Frøland, har tidligere advart mot å utelukke lab leak-teorien. Hans vektskål er i ferd med å tippe ned på lab leak som opphavet til pandemien. Om den nye studien og pressedekningen av den sier han: Denne artikkelen gir overhodet ikke noe fasitsvar på lab leak-debatten. Daily Mails overskrift er en journalistisk hype.
+			</p>
+			<p>
+				Espen Nakstad, tidligere direktør i Helsedirektoratet og nå leder av Nasjonal behandlingstjeneste for CBRNE-medisin ved Oslo Universitetssykehus, forklarer hva som egentlig er gjort i denne studien: Forskerne har sekvensert coronavirus fra miljøprøver tatt fra markedet i Wuhan og funnet at flere typer dyr på markedet potensielt kan ha vært mellomverter for viruset, før det smittet over på større grupper av mennesker.
+			</p>
+			<img  src="https://s3.amazonaws.com/kajabi-storefronts-production/blogs/2648/images/e6RBbJNERK3C7IRbc6YA_Skjermbilde%202016-09-24%20kl.%2013.05.09.jpg" alt="Old boats floating on a lake that is quite as a mouse ">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+			<h2>Gir overhode ikke noen fasit</h2>
+			<p>Professor emeritus ved Universitetet i Oslo, Stig S. Frøland, har tidligere advart mot å utelukke lab leak-teorien. Hans vektskål er i ferd med å tippe ned på lab leak som opphavet til pandemien. Om den nye studien og pressedekningen av den sier han: Denne artikkelen gir overhodet ikke noe fasitsvar på lab leak-debatten. Daily Mails overskrift er en journalistisk hype.
+			</p>
+			<p>
+				Espen Nakstad, tidligere direktør i Helsedirektoratet og nå leder av Nasjonal behandlingstjeneste for CBRNE-medisin ved Oslo Universitetssykehus, forklarer hva som egentlig er gjort i denne studien: Forskerne har sekvensert coronavirus fra miljøprøver tatt fra markedet i Wuhan og funnet at flere typer dyr på markedet potensielt kan ha vært mellomverter for viruset, før det smittet over på større grupper av mennesker.
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<!-- Add scroll driven animation -->
+
+<style>
+	 section {
+		margin-top: calc(var(--nav-height) + 1rem);
+        max-width: 64rem;
+        margin-inline:auto;
+
+		.content{
+			max-width: 90ch;
+		}
+		h1{
+			font-size:2rem;
+		}
+		p:has(+ p){
+			margin-block-end:1rem;
+		}
+		img{
+			animation: reveal linear both;
+			animation-timeline: view();
+		}
+    }
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			clip-path: inset(45% 50% 45% 50%);
+		}
+		50% {
+			opacity: 1;
+			clip-path: inset(0% 0% 0% 0%);
+		}
+	}
+</style>
